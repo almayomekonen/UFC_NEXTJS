@@ -1,32 +1,28 @@
-import logo from "../icon.jpg";
+import logo from "../ufc.png";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div id="home">
       <img src={logo.src} alt="A newspaper" />
-      <h1>A News Site For The Next Generation</h1>
+      <h1>Ultimate Fight Night: Your Source for UFC Updates</h1>
+      <p>NextFight: The Ultimate Destination for UFC Fans</p>
+
       <p>
-        Next News is here to deliver you all the latest news - concise &
-        unbiased!
+        NextFight is here to bring you the latest and most exciting updates from
+        the world of UFC. Our mission is to deliver news, analysis, and
+        highlights about UFC fighters in a concise and unbiased manner.
       </p>
 
       <p>
-        NextNews aims to provide you with the latest news in a concise and
-        unbiased manner. We strive to deliver the news in a way that is easy to
-        understand and to the point. We want to keep you informed without
-        overwhelming you with unnecessary information.
+        We aim to keep you on the edge of your seat with timely updates and
+        in-depth coverage of your favorite fighters. From breaking news to
+        exclusive interviews and fight breakdowns, we ensure that you get all
+        the essential information without unnecessary fluff.
       </p>
 
       <p>
-        We employ a team of dedicated journalists who are committed to
-        delivering the news in a fair and unbiased manner. Our team is
-        passionate about keeping you informed and up to date with the latest
-        news.
-      </p>
-
-      <p>
-        <Link href="/news">Read the latest news</Link>
+        <Link href="/news">Catch the Latest UFC Updates Now</Link>
       </p>
     </div>
   );

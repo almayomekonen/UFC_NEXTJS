@@ -1,25 +1,22 @@
 import News from "@/components/News/News";
-
 import {
   getAvailableNewsMonths,
   getAvailableNewsYears,
   getNewsForYear,
   getNewsForYearAndMonth,
 } from "@/lib/news";
-
 import Link from "next/link";
 import { Suspense } from "react";
 
 const FilterHeader = async ({ year, month }) => {
   const availableYears = await getAvailableNewsYears();
-
   let links = availableYears;
 
   if (
     (year && !availableYears.includes(year)) ||
     (month && !getAvailableNewsMonths(year).includes(month))
   ) {
-    throw new Error("Invail path.");
+    throw new Error("Invalid path.");
   }
 
   if (year && !month) {
@@ -36,7 +33,6 @@ const FilterHeader = async ({ year, month }) => {
         <ul>
           {links.map((link) => {
             const href = year ? `/archive/${year}/${link}` : `/archive/${link}`;
-
             return (
               <li key={link}>
                 <Link href={href}>{link}</Link>
@@ -55,10 +51,10 @@ const FilteredNews = async ({ year, month }) => {
   if (year && !month) {
     news = await getNewsForYear(year);
   } else if (year && month) {
-    news = getNewsForYearAndMonth(year, month);
+    news = await getNewsForYearAndMonth(year, month);
   }
 
-  let newsContent = <p>No news found for the selected peroid.</p>;
+  let newsContent = <p>No news found for the selected period.</p>;
 
   if (news && news.length > 0) {
     newsContent = <News news={news} />;

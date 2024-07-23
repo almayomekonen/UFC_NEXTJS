@@ -1,4 +1,5 @@
 import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
+import Button from "@/components/Button/Button";
 import { getNewsItem } from "@/lib/news";
 import { notFound } from "next/navigation";
 
@@ -14,8 +15,9 @@ const IntreceptedImagePage = async ({ params }) => {
     <>
       <ModalBackDrop />
       <dialog className="modal" open>
-        <button className="back-btn">back</button>
-        <img src={`/images/news/${imageItem.image}`} alt={imageItem.title} />
+        <div className="x-elem">
+          <img src={`/images/news/${imageItem.image}`} alt={imageItem.title} />
+        </div>
       </dialog>
     </>
   );
