@@ -1,16 +1,17 @@
 "use client";
 
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
+import classes from "./MainHeader.module.css";
 
-const Navlink = ({ href, children }) => {
-  const pathName = usePathname();
+const Navlink = ({ href, children, onClick }) => {
+  const pathname = usePathname();
 
   return (
     <Link
       href={href}
-      className={pathName.startsWith(href) ? "active" : undefined}
+      onClick={onClick}
+      className={pathname.startsWith(href) ? classes.active : ""}
     >
       {children}
     </Link>

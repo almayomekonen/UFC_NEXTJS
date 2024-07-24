@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -10,10 +10,19 @@ html {
 
 body {
   margin: 0;
-  background-color: #181817;
+  padding: 0;
+  background-color: white;
   color: #e5e5e1;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #181817;
+  text-align: center;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 3rem;
 }
 
 ul {
@@ -24,47 +33,9 @@ ul {
 
 #page {
   width: 90%;
-  max-width: 60rem;
   margin: 2rem auto;
 }
 
-#main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-#logo {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  border-radius: 4px;
-}
-
-#main-header #logo a,
-#main-header #logo a:hover {
-  color: #e1e1d7;
-  text-decoration: none;
-}
-
-#main-header ul {
-  display: flex;
-  gap: 2rem;
-  font-weight: bold;
-}
-
-#main-header ul a {
-  text-decoration: none;
-  color: #e5e5e1;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-#main-header ul a:hover,
-#main-header ul a.active {
-  background-color: #bcbcb7;
-  color: #181817;
-}
 
 #home {
   margin: 3rem auto;
@@ -81,11 +52,12 @@ ul {
 #home h1 {
   margin-top: 3rem;
   font-size: 1.9rem;
+  color: #181817;
 }
 
 #home p {
   margin: 2rem 0;
-  color: #bcbcb7;
+  color: #181817;
   font-size: 1.1rem;
 }
 
@@ -98,39 +70,12 @@ ul {
   text-decoration: none;
   font-weight: bold;
   margin-top: 2rem;
+  transition: 0.5s;
 }
 
 #home a:hover {
-  background-color: #e5e5e1;
-}
-
-.news-list {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}
-
-.news-list a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  color: #e5e5e1;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 1.2rem;
-  padding: 0 0 1rem 0;
-}
-
-.news-list a img {
-  width: 100%;
-  height: 14rem;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.news-list a:hover {
-  background-color: #2d2d2b;
+  background-color: #181817;
+  color: white;
 }
 
 .modal-backdrop {
@@ -145,12 +90,6 @@ ul {
   align-items: center;
 }
 
-.news-article img {
-  width: 7rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-
 .modal img {
   border-radius: 4px;
   background: none;
@@ -159,7 +98,7 @@ ul {
   width: 100%;
 }
 
-.modal{
+.modal {
   border-radius: 15px;
 }
 
@@ -168,28 +107,11 @@ ul {
   margin: 0;
 }
 
-#archive-header ul {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-#archive-header ul a {
-  text-decoration: none;
-  color: #b0b0a6;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-#archive-header ul a:hover,
-#archive-header ul a.active {
-  color: #e5e5e1;
-}
-
 #archive-filter {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
+  width: 61rem;
+  margin: 0 auto;
   border-bottom: 2px solid #b0b0a6;
 }
 
@@ -198,3 +120,24 @@ ul {
   margin-top: 3rem;
 }
 
+
+@media (max-width: 768px) {
+  #archive-filter {
+   width: 22rem;
+  }
+
+  h1 {
+    color: #181817;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #archive-filter {
+    padding-bottom: 0.5rem; 
+    border-bottom-width: 1px; /* Further adjust border thickness */
+  }
+}

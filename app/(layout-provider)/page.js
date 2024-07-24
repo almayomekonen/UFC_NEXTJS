@@ -22,7 +22,7 @@ export default function HomePage() {
       </p>
 
       <p>
-        <Link href="/news">Catch the Latest UFC Updates Now</Link>
+        <Link href="/athletes">Catch the Latest UFC Updates Now</Link>
       </p>
     </div>
   );

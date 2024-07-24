@@ -1,10 +1,14 @@
-import News from "@/components/News/News";
+import Athletes from "@/components/Athletes/Athletes";
+
+import classes from "./page.module.css";
 import {
   getAvailableNewsMonths,
   getAvailableNewsYears,
   getNewsForYear,
   getNewsForYearAndMonth,
 } from "@/lib/news";
+import ErrorBoundary from "@/components/ErrorBoundary/ErrorBoundary";
+
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -28,7 +32,7 @@ const FilterHeader = async ({ year, month }) => {
   }
 
   return (
-    <header id="archive-header">
+    <header id={classes.archiveHeader}>
       <nav>
         <ul>
           {links.map((link) => {
@@ -57,7 +61,7 @@ const FilteredNews = async ({ year, month }) => {
   let newsContent = <p>No news found for the selected period.</p>;
 
   if (news && news.length > 0) {
-    newsContent = <News news={news} />;
+    newsContent = <Athletes athletes={news} />;
   }
 
   return newsContent;
@@ -72,13 +76,15 @@ const FilteredNewsPage = async ({ params }) => {
 
   return (
     <>
-      <Suspense fallback={<p>Loading filter ...</p>}>
-        <FilterHeader year={selectedYear} month={selectedMonth} />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<p>Loading filter ...</p>}>
+          <FilterHeader year={selectedYear} month={selectedMonth} />
+        </Suspense>
 
-      <Suspense fallback={<p>Loading news ...</p>}>
-        <FilteredNews year={selectedYear} month={selectedMonth} />
-      </Suspense>
+        <Suspense fallback={<p>Loading news ...</p>}>
+          <FilteredNews year={selectedYear} month={selectedMonth} />
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 };

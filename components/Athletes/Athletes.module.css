@@ -1,0 +1,88 @@
+.athletesList {
+  display: grid;
+  justify-content: center;
+  gap: 7rem;
+  grid-template-columns: repeat(3, 280px);
+}
+
+.athletesList a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e5e5e1;
+  text-decoration: none;
+  border: 0.5px solid rgba(128, 128, 128, 0.4);
+  font-size: 1.2rem;
+  padding: 0;
+  text-align: center;
+  transition: 0.5s;
+  margin: 0;
+}
+
+.mrbAthletes {
+  line-height: 0.4;
+  font-weight: lighter;
+  font-family: "Roboto", sans-serif;
+  color: gray;
+}
+
+.athletesList a img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border: 0.5px solid rgba(128, 128, 128, 0.4);
+}
+
+.athletesList span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #181817;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.athletesList p {
+  font-size: 1rem;
+}
+.athletesList h3 {
+  font-size: 1rem;
+  color: #75797a;
+}
+.athletesList h4 {
+  font-size: 1rem;
+}
+.athletesList span:hover {
+  transition: 0.5s;
+  color: red;
+}
+.athletesList li {
+  background-color: #fafbfd;
+  transition: transform 1s ease;
+  transition: box-shadow 0.3s ease;
+}
+.athletesList li:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.01);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .athletesList {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding: 3rem;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .athletesList {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding: 3rem;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .athletesList {
+    grid-template-columns: 300px;
+    gap: 8rem;
+  }
+}

@@ -1,0 +1,67 @@
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.newsArticle {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  background-color: #19191e;
+}
+
+.newsArticle img {
+  display: block;
+  width: 20rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+.newsArticle .fighterDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsArticle h2 {
+  color: white;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: monospace;
+}
+.newsArticle span {
+  color: white;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.newsArticle p {
+  color: #a4a7ac;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.fighterResume {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  width: 20rem;
+}
+
+.finishes {
+  display: flex;
+  flex-direction: column;
+}
+.finishes hr {
+  border: 1px solid gray;
+  width: 5rem;
+}
+.finishes h2 {
+  font-size: 3rem;
+}

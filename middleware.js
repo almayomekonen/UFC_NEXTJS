@@ -5,5 +5,5 @@ export const middleware = (request) => {
 };
 
 export const config = {
-  macther: "/news",
+  macther: "/athletes",
 };

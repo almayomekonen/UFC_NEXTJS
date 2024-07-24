@@ -1,4 +1,4 @@
-import News from "@/components/News/News";
+import Athletes from "@/components/Athletes/Athletes";
 import { getLatestNews } from "@/lib/news";
 
 const LatestNewsPage = async () => {
@@ -6,8 +6,8 @@ const LatestNewsPage = async () => {
 
   return (
     <>
-      <h1>Latest News Page</h1>
-      <News news={latestNews} />
+      <h1>LATEST ATHLETES RESULTS</h1>
+      <Athletes athletes={latestNews} />
     </>
   );
 };
