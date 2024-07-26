@@ -1,13 +1,20 @@
 import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
-import Button from "@/components/Button/Button";
 import { getNewsItem } from "@/lib/news";
 import { notFound } from "next/navigation";
+import imageMap from "@/data/imageMap";
 
-const IntreceptedImagePage = async ({ params }) => {
-  const newsItemSlug = params.slug;
-  const imageItem = await getNewsItem(newsItemSlug);
+const IntreceptedImagePage = async ({ params, searchParams }) => {
+  const { slug } = params;
+  const { fighter } = searchParams;
+  const newsItem = await getNewsItem(slug);
 
-  if (!imageItem) {
+  if (!newsItem) {
+    notFound();
+  }
+
+  const imageUrl = imageMap[newsItem.slug]?.[fighter];
+
+  if (!imageUrl) {
     notFound();
   }
 
@@ -16,7 +23,7 @@ const IntreceptedImagePage = async ({ params }) => {
       <ModalBackDrop />
       <dialog className="modal" open>
         <div className="x-elem">
-          <img src={`/images/news/${imageItem.image}`} alt={imageItem.title} />
+          <img src={imageUrl} alt={newsItem.title} />
         </div>
       </dialog>
     </>

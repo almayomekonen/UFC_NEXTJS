@@ -12,11 +12,15 @@ export const DUMMY_FIGHTERS = [
     },
     born: "Nigeria",
     knockouts: "16",
+    knockoutDetail: "Miami-Dade Arena, Miami, Florida",
+    event: "UFC 287",
+    fightDate: "April 8, 2023",
+    highlight:
+      " Israel Adesanya defeated Alex Pereira by knockout in the second round. This victory allowed Adesanya to regain the UFC Middleweight Championship.",
+
     firstRoundFinishes: "6",
     image: "israel.webp",
     date: "2023-09-09",
-    content:
-      "Israel Adesanya has once again proven why he is one of the top fighters in the UFC with a stunning victory in his latest title bout. Adesanya's precision and striking skills were on full display as he secured the win, solidifying his position at the top of the middleweight division.",
   },
   {
     id: "n2",
@@ -30,10 +34,16 @@ export const DUMMY_FIGHTERS = [
       draws: "0",
     },
     born: "USA",
+    knockouts: "10",
+    knockoutDetail: "Honda Center, Anaheim, California",
+    event: "UFC 214",
+    fightDate: "July 29, 2017",
+    highlight:
+      "In a highly anticipated rematch for the UFC Light Heavyweight Championship, Jon Jones defeated Daniel Cormier by knockout, reclaiming his title. Their first fight had ended controversially, heightening the stakes of this bout.",
+
+    firstRoundFinishes: "7",
     image: "jon.webp",
     date: "2023-03-04",
-    content:
-      "Jon Jones has made a triumphant return to the UFC with a commanding performance in his comeback fight. Known for his dominance and versatility, Jones showcased his exceptional skills and reaffirmed his status as one of the greatest fighters in the history of the sport.",
   },
   {
     id: "n3",
@@ -47,10 +57,16 @@ export const DUMMY_FIGHTERS = [
       draws: "0",
     },
     born: "Nigeria",
+    knockouts: "9",
+    knockoutDetail: "T-Mobile Arena, Las Vegas, Nevada, USA",
+    event: "UFC 245",
+    fightDate: "December 14, 2019",
+    highlight:
+      "Usman broke Covington's jaw during the fight, but Covington continued to fight valiantly. The bout remained highly competitive until the final round, where Usman dropped Covington twice before the referee stopped the fight.",
+    firstRoundFinishes: "3",
+    submissions: "1",
     image: "kamaru.jpg",
     date: "2021-10-21",
-    content:
-      "Kamaru Usman successfully defended his welterweight title in an impressive fashion. Usman's wrestling and striking were too much for his opponent, and he continues to solidify his legacy as one of the most formidable fighters in the UFC's welterweight division.",
   },
   {
     id: "n4",
@@ -64,10 +80,15 @@ export const DUMMY_FIGHTERS = [
       draws: "0",
     },
     born: "Cameroon",
+    knockouts: "12",
+    knockoutDetail: "Little Caesars Arena, Detroit, Michigan",
+    event: "UFC 218",
+    fightDate: "December 2, 2017",
+    highlight:
+      "Francis Ngannou delivered a stunning first-round knockout against Alistair Overeem with a powerful uppercut, earning the Performance of the Night bonus and solidifying his status as a top heavyweight contender.",
+    firstRoundFinishes: "4",
     image: "francis.webp",
     date: "2022-01-22",
-    content:
-      "Francis Ngannou has once again shown his knockout power with a spectacular finish in his latest fight. Ngannou's explosive strength and striking ability continue to make him one of the most feared fighters in the heavyweight division.",
   },
   {
     id: "n5",
@@ -81,9 +102,14 @@ export const DUMMY_FIGHTERS = [
       draws: "0",
     },
     born: "Ireland",
+    knockouts: "19",
+    knockoutDetail: "Madison Square Garden in New York City",
+    event: "UFC 205",
+    fightDate: "November 12, 2016",
+    highlight:
+      "Conor McGregor knocked out Eddie Alvarez in the second round to win the UFC Lightweight Championship, becoming the first fighter to hold titles in two weight classes simultaneously. McGregor's striking skill and dominance were evident throughout the fight.",
+    firstRoundFinishes: "13",
     image: "conor.avif",
     date: "2021-07-10",
-    content:
-      "Conor McGregor made a remarkable comeback with a victory in his recent bout. Known for his charisma and knockout power, McGregor's performance was a testament to his skill and determination as he looks to climb back to the top of the UFC rankings.",
   },
 ];
