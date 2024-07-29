@@ -1,8 +1,8 @@
 import Athletes from "@/components/Athletes/Athletes";
-import { getLatestNews } from "@/lib/news";
+import { getLatestFighters } from "@/lib/fightersService";
 
 const LatestNewsPage = async () => {
-  const latestNews = await getLatestNews();
+  const latestNews = await getLatestFighters();
 
   return (
     <>

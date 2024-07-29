@@ -7,7 +7,10 @@ const Athletes = ({ athletes }) => {
       {athletes.map((athletes) => (
         <li key={athletes.id}>
           <Link href={`/athletes/${athletes.slug}`}>
-            <img src={`/images/news/${athletes.image}`} alt={athletes.title} />
+            <img
+              src={`https://fighters-profile.s3.eu-north-1.amazonaws.com/${athletes.images?.profile}`}
+              alt={athletes.title}
+            />
             <h3>{athletes.nickname}</h3>
             <span>{athletes.title}</span>
             <div className={classes.mrbAthletes}>

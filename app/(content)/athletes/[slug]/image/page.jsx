@@ -1,17 +1,22 @@
-import { getNewsItem } from "@/lib/news";
 import { notFound } from "next/navigation";
+import { getFighterBySlug } from "@/lib/fightersService";
+import classes from "./page.module.css";
 
 const ImagePage = async ({ params }) => {
   const newsItemSlug = params.slug;
-  const imageItem = await getNewsItem(newsItemSlug);
+
+  const imageItem = await getFighterBySlug(newsItemSlug);
 
   if (!imageItem) {
     notFound();
   }
 
   return (
-    <div>
-      <img src={`/images/news/${imageItem.image}`} alt={imageItem.title} />
+    <div className={classes.image}>
+      <img
+        src={`${process.env.BUCKET_STANDING_FIGHTERS_URL}/${imageItem.images.fighter}`}
+        alt={imageItem.title}
+      />
     </div>
   );
 };

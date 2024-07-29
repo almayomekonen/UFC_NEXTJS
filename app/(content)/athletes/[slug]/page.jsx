@@ -1,39 +1,38 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getNewsItem } from "@/lib/news";
-
-import imageMap from "@/data/imageMap";
+import { getFighterBySlug } from "@/lib/fightersService";
 
 import classes from "./page.module.css";
 
 const NewsDetailPage = async ({ params }) => {
   const newsSlug = params.slug;
-  const newsItem = await getNewsItem(newsSlug);
+  const newsItem = await getFighterBySlug(newsSlug);
 
   if (!newsItem) {
     notFound();
   }
-
-  const profileImageUrl =
-    imageMap[newsItem.slug]?.profile || `/images/news/${newsItem.image}`;
-  const actionImageUrl =
-    imageMap[newsItem.slug]?.action || `/images/news/${newsItem.image}`;
 
   return (
     <div className={classes.newsContainer}>
       <article className={classes.newsArticle}>
         <header>
           <Link href={`/athletes/${newsItem.slug}/image?fighter=profile`}>
-            <img src={profileImageUrl} alt={newsItem.title} />
+            <img
+              src={`${process.env.BUCKET_STANDING_FIGHTERS_URL}/${newsItem.images.fighter}`}
+              alt={newsItem.title}
+            />
           </Link>
 
           <div className={classes.actionImage}>
             <p>{newsItem.event}</p>
             <p>{newsItem.fightDate}</p>
             <Link href={`/athletes/${newsItem.slug}/image?fighter=action`}>
-              <p>{newsItem.knockoutDetail}</p>
-              <img src={actionImageUrl} alt={newsItem.title} />
+              <img
+                src={`${process.env.BUCKET_GIFS_FIGHTERS_URL}/${newsItem.images.action}`}
+                alt={newsItem.title}
+              />
             </Link>
+            <p>{newsItem.knockoutDetail}</p>
             <p>{newsItem.location}</p>
             <h4>{newsItem.highlight}</h4>
             <button>VIEW FIGHT HISTORY</button>

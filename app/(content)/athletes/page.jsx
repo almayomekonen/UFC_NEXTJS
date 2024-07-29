@@ -1,8 +1,10 @@
+// pages/fighters.js
 import Athletes from "@/components/Athletes/Athletes";
-import { getAllNews } from "@/lib/news";
+import { getAllFighters } from "@/lib/fightersService";
 
 const AthletesPage = async () => {
-  const athletes = await getAllNews();
+  const athletes = await getAllFighters();
+
   return (
     <>
       <h1>ATHLETES</h1>

@@ -1,18 +1,25 @@
 import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
-import { getNewsItem } from "@/lib/news";
+import { getFighterBySlug } from "@/lib/fightersService";
 import { notFound } from "next/navigation";
-import imageMap from "@/data/imageMap";
 
-const IntreceptedImagePage = async ({ params, searchParams }) => {
+const InterceptedImagePage = async ({ params, searchParams }) => {
   const { slug } = params;
   const { fighter } = searchParams;
-  const newsItem = await getNewsItem(slug);
+
+  const newsItem = await getFighterBySlug(slug);
 
   if (!newsItem) {
     notFound();
   }
 
-  const imageUrl = imageMap[newsItem.slug]?.[fighter];
+  let imageUrl = "";
+  if (fighter === "profile") {
+    imageUrl = `https://fighters-standing.s3.eu-north-1.amazonaws.com/${newsItem.images.fighter}`;
+  } else if (fighter === "action") {
+    imageUrl = `https://fighters-gifs.s3.eu-north-1.amazonaws.com/${newsItem.images.action}`;
+  } else {
+    notFound();
+  }
 
   if (!imageUrl) {
     notFound();
@@ -30,4 +37,4 @@ const IntreceptedImagePage = async ({ params, searchParams }) => {
   );
 };
 
-export default IntreceptedImagePage;
+export default InterceptedImagePage;

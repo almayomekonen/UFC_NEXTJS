@@ -162,7 +162,7 @@
     width: 13rem;
     flex-basis: 50%;
     margin: 0 auto;
-    margin-bottom: 4rem;
+    margin-bottom: rem;
     padding-right: 10px;
     box-sizing: inherit;
   }
@@ -179,7 +179,7 @@
   .actionImage {
     flex-direction: column;
     justify-content: end;
-    padding: 0;
+    padding: 3rem;
   }
   .newsArticle .detailsAndResume {
     display: flex;

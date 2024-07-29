@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# UFC News Next.js Project
+
+Welcome to the UFC News Next.js project! This application showcases information about UFC fighters and their details, leveraging Next.js for server-side rendering and optimized performance.
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, follow the steps below:
 
-```bash
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
+
+git clone https://github.com/your-username/ufc-news-nextjs.git
+cd ufc-news-nextjs
+
+### 2. Install Dependencies
+
+Install the necessary dependencies using npm;
+
+npm install
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file in the root of your project directory and add the following environment variables:
+
+BUCKET_STANDING_FIGHTERS_URL="your bucket string"
+BUCKET_GIFS_FIGHTERS_URL="your bucket string"
+DB_USER="your name"
+DB_PASSWORD="your password"
+DB_NAME="your dataBase name"
+
+### 4. Run the Development Server
+
+Start the development server with one of the following commands:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 5. Edit the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You can start editing the application by modifying `app/page.js`. The page will auto-update as you make changes.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to adjust any specifics to better fit your project’s unique setup or details!
