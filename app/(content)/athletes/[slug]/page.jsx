@@ -13,7 +13,7 @@ const NewsDetailPage = async ({ params }) => {
   }
 
   return (
-    <div className={classes.newsContainer}>
+    <>
       <article className={classes.newsArticle}>
         <header>
           <Link href={`/athletes/${newsItem.slug}/image?fighter=profile`}>
@@ -51,26 +51,69 @@ const NewsDetailPage = async ({ params }) => {
             <div className={classes.finishes}>
               <h2>{newsItem.firstRoundFinishes}</h2>
               <hr />
-              <p>
-                FIRST <br />
-                ROUND
-                <br /> FINISHES
-              </p>
+              <p>FIRST ROUND FINISHES</p>
             </div>
 
             <div className={classes.finishes}>
               <h2>{newsItem.knockouts}</h2>
               <hr />
-              <p>
-                WINS
-                <br /> BY <br />
-                TKO
-              </p>
+              <p>WINS BY TKO</p>
             </div>
           </div>
         </div>
       </article>
-    </div>
+
+      <section className={classes.fightHistory}>
+        <h2 className={classes.h2}>ATHLETE RECORD</h2>
+        {newsItem.fightesDetails.fightHistory &&
+          newsItem.fightesDetails.fightHistory.map((fight, index) => (
+            <div key={index} className={classes.athleteResultsInfo}>
+              <div className={classes.athleteResultsContent}>
+                <img
+                  className={classes.athleteResultsImage}
+                  src={`https://fightes-details-images.s3.eu-north-1.amazonaws.com/${fight.image}`}
+                  alt="fighter"
+                />
+                <div className={classes.athleteResultsDetails}>
+                  <h3 className={classes.athleteResultsHeadline}>
+                    {fight.opponent}
+                  </h3>
+                  <div className={classes.athleteResultsDate}>{fight.date}</div>
+
+                  <div className={classes.athleteResultsResults}>
+                    <div className={classes.athleteResultsResult}>
+                      <div className={classes.athleteResultsResultLabel}>
+                        Round
+                      </div>
+                      <div className={classes.athleteResultsResultText}>
+                        {fight.round || "N/A"}
+                      </div>
+                    </div>
+
+                    <div className={classes.athleteResultsResult}>
+                      <div className={classes.athleteResultsResultLabel}>
+                        Time
+                      </div>
+                      <div className={classes.athleteResultsResultText}>
+                        {fight.time || "N/A"}
+                      </div>
+                    </div>
+
+                    <div className={classes.athleteResultsResult}>
+                      <div className={classes.athleteResultsResultLabel}>
+                        Method
+                      </div>
+                      <div className={classes.athleteResultsResultText}>
+                        {fight.method || "N/A"}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+      </section>
+    </>
   );
 };
 
