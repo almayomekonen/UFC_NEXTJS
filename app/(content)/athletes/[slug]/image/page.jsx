@@ -2,16 +2,17 @@ import { notFound } from "next/navigation";
 import { getFighterBySlug, getAllFighters } from "@/lib/fightersService";
 import classes from "./page.module.css";
 
-export const generateStaticParams = async () => {
+// This function generates static paths for the dynamic route
+export async function generateStaticParams() {
   const fighters = await getAllFighters();
   return fighters.map((fighter) => ({
     slug: fighter.slug,
   }));
-};
+}
 
 const ImagePage = async ({ params }) => {
-  const newsItemSlug = params.slug;
-  const imageItem = await getFighterBySlug(newsItemSlug);
+  const { slug } = params; // Destructure slug from params
+  const imageItem = await getFighterBySlug(slug);
 
   if (!imageItem) {
     notFound();
