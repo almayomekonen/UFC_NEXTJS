@@ -1,33 +1,18 @@
-// app/archive/[[...filter]]/page.js
-
 import Athletes from "@/components/Athletes/Athletes";
+
 import classes from "./page.module.css";
+
 import {
   getAvailableFighterYears,
   getFightersForYear,
   getFightersForMonth,
   getFightersForYearAndMonth,
 } from "@/lib/fightersService";
+
 import ErrorBoundary from "@/components/ErrorBoundary/ErrorBoundary";
+
 import Link from "next/link";
 import { Suspense } from "react";
-
-export const generateStaticParams = async () => {
-  const years = await getAvailableFighterYears();
-  const params = [];
-
-  for (const year of years) {
-    const months = await getFightersForMonth(year);
-
-    params.push({ filter: [year.toString()] }); // For /archive/[year]
-
-    for (const month of months) {
-      params.push({ filter: [year.toString(), month] }); // For /archive/[year]/[month]
-    }
-  }
-
-  return params;
-};
 
 const FilterHeader = async ({ year, month }) => {
   const availableYears = await getAvailableFighterYears();
@@ -35,7 +20,7 @@ const FilterHeader = async ({ year, month }) => {
 
   if (
     (year && !availableYears.includes(+year)) ||
-    (month && !(await getFightersForMonth(+year)).includes(month))
+    (month && !getFightersForMonth(+month))
   ) {
     throw new Error("Invalid path.");
   }
@@ -85,9 +70,11 @@ const FilteredNews = async ({ year, month }) => {
 };
 
 const FilteredNewsPage = async ({ params }) => {
-  const filter = params.filter || [];
-  const selectedYear = filter[0];
-  const selectedMonth = filter[1];
+  const filter = params.filter;
+
+  const selectedYear = filter ? filter[0] : undefined;
+
+  const selectedMonth = filter ? filter[1] : undefined;
 
   return (
     <>

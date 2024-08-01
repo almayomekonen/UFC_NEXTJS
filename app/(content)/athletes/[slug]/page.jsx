@@ -1,16 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getFighterBySlug, getAllFighters } from "@/lib/fightersService";
+import { getFighterBySlug } from "@/lib/fightersService";
 
 import classes from "./page.module.css";
-
-export const generateStaticParams = async () => {
-  const fighters = await getAllFighters();
-
-  return fighters.map((fighter) => ({
-    slug: fighter.slug,
-  }));
-};
 
 const NewsDetailPage = async ({ params }) => {
   const newsSlug = params.slug;
