@@ -1,10 +1,8 @@
-import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
 import { getFighterBySlug, getAllFighters } from "@/lib/fightersService";
 import { notFound } from "next/navigation";
 
 export const generateStaticParams = async () => {
   const fighters = await getAllFighters();
-
   return fighters.map((fighter) => ({
     slug: fighter.slug,
   }));
