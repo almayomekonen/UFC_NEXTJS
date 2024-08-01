@@ -12,7 +12,6 @@ import ErrorBoundary from "@/components/ErrorBoundary/ErrorBoundary";
 import Link from "next/link";
 import { Suspense } from "react";
 
-// Function to generate static parameters for dynamic routes
 export const generateStaticParams = async () => {
   const years = await getAvailableFighterYears();
   const params = [];
@@ -23,7 +22,7 @@ export const generateStaticParams = async () => {
     params.push({ filter: [year.toString()] }); // For /archive/[year]
 
     for (const month of months) {
-      params.push({ filter: [year.toString(), month] });
+      params.push({ filter: [year.toString(), month] }); // For /archive/[year]/[month]
     }
   }
 
