@@ -2,6 +2,8 @@ import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
 import { getFighterBySlug } from "@/lib/fightersService";
 import { notFound } from "next/navigation";
 
+export const generateStaticParams = () => {};
+
 const InterceptedImagePage = async ({ params, searchParams }) => {
   const { slug } = params;
   const { fighter } = searchParams;
