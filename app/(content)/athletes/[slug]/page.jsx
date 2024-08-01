@@ -11,6 +11,7 @@ export const generateStaticParams = async () => {
     slug: fighter.slug,
   }));
 };
+
 const NewsDetailPage = async ({ params }) => {
   const newsSlug = params.slug;
   const newsItem = await getFighterBySlug(newsSlug);
