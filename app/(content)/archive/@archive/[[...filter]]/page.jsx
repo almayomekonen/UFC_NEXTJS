@@ -91,4 +91,19 @@ const FilteredNewsPage = async ({ params }) => {
   );
 };
 
+export async function generateStaticParams() {
+  const availableYears = await getAvailableFighterYears();
+  const staticParams = [];
+
+  availableYears.forEach((year) => {
+    staticParams.push({ filter: [year.toString()] }); // Year only
+    const months = getFightersForYear(year);
+    months.forEach((month) => {
+      staticParams.push({ filter: [year.toString(), month.toString()] }); // Year and month
+    });
+  });
+
+  return staticParams;
+}
+
 export default FilteredNewsPage;
