@@ -1,5 +1,5 @@
 import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
-import { getFighterBySlug } from "@/lib/fightersService";
+import { getFighterBySlug, getAllFighters } from "@/lib/fightersService";
 import { notFound } from "next/navigation";
 
 const InterceptedImagePage = async ({ params, searchParams }) => {
@@ -36,5 +36,13 @@ const InterceptedImagePage = async ({ params, searchParams }) => {
     </>
   );
 };
+
+export async function generateStaticParams() {
+  const slugs = await getAllFighters();
+
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
 
 export default InterceptedImagePage;
