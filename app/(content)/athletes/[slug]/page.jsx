@@ -121,11 +121,11 @@ const NewsDetailPage = async ({ params }) => {
 export async function generateStaticParams() {
   const allFighters = await getAllFighters();
 
-  const paths = allFighters.map((fighter) => ({
-    slug: fighter.slug,
+  return allFighters.map((fighter) => ({
+    params: {
+      slug: fighter.slug,
+    },
   }));
-
-  return paths;
 }
 
 export default NewsDetailPage;
