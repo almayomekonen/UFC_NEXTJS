@@ -1,5 +1,4 @@
 import Athletes from "@/components/Athletes/Athletes";
-
 import classes from "./page.module.css";
 
 import {
