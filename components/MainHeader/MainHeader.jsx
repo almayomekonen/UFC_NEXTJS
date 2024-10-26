@@ -7,9 +7,18 @@ import classes from "./MainHeader.module.css";
 
 export default function MainHeader() {
   const [showMenu, setShowMenu] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchInput, setShowSearchInput] = useState(false);
 
   const handleNavlinkClick = () => {
     setShowMenu(false);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = `/search?query=${encodeURIComponent(searchQuery)}`;
+    }
   };
 
   return (
@@ -28,6 +37,26 @@ export default function MainHeader() {
           </li>
         </ul>
       </nav>
+
+      <div className={classes.searchContainer}>
+        <button
+          className={classes.searchButton}
+          onClick={() => setShowSearchInput(!showSearchInput)}
+        >
+          🔍
+        </button>
+        {showSearchInput && (
+          <form onSubmit={handleSearchSubmit} className={classes.searchForm}>
+            <input
+              type="text"
+              placeholder="Search for fighters..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={classes.searchInput}
+            />
+          </form>
+        )}
+      </div>
 
       <button
         className={classes.mobMenu}

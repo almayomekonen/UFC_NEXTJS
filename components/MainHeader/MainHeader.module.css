@@ -2,16 +2,14 @@
   position: relative;
   background-color: #181817;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem 2rem; /* Adjust padding for a cleaner look */
 }
 
 .logo {
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
-  border-radius: 4px;
 }
 
 .mainHeader .logo a,
@@ -20,16 +18,22 @@
   text-decoration: none;
 }
 
+.desktopMenu {
+  flex: 1; /* Allow menu to take available space */
+  display: flex;
+  justify-content: flex-end; /* Align menu items to the right */
+}
+
 .desktopMenu ul {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; /* Space between items */
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .desktopMenu ul a {
   text-decoration: none;
-  color: #e5e5e1a5;
+  color: #e5e5e1;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 1rem;
@@ -48,27 +52,23 @@
   border: none;
   color: #fff;
   cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  margin-left: 1rem; /* Changed margin to left for better spacing */
 }
 
 .navMenu {
   position: fixed;
-  top: 0;
+  top: 9px;
   right: 0;
   display: flex;
   flex-direction: column;
   padding: 0.9rem;
   height: 100vh;
-  width: 100%;
+  width: 250px;
   z-index: 1;
   text-align: center;
   background: white;
-  border-radius: 0; 
-  margin-top: 6rem;
+  margin-top: 60px;
 }
-
 
 .navMenu ul {
   flex-direction: column;
@@ -89,12 +89,49 @@
 
 @media only screen and (max-width: 662px) {
   .mobMenu {
-    display: block;
+    display: block; /* Show hamburger menu */
   }
   .desktopMenu {
-    display: none;
+    display: none; /* Hide desktop menu */
   }
   .navMenu {
-    display: block;
+    display: block; /* Show mobile menu */
   }
+  .mainHeader {
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+}
+
+/* Search Form */
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center search container */
+  flex: 0 1 auto; /* Allow search container to shrink */
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 0.5rem; /* Space between search input and button */
+  width: 200px; /* Set a width for the search input */
+}
+
+.searchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 0.5rem; /* Space between search button and input */
+}
+
+.searchButton:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
