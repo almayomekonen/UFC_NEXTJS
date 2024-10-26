@@ -90,21 +90,4 @@ const FilteredNewsPage = async ({ params }) => {
   );
 };
 
-export async function generateStaticParams() {
-  const availableYears = await getAvailableFighterYears();
-  const staticParams = [];
-
-  for (const year of availableYears) {
-    staticParams.push({ filter: [year.toString()] }); // Year only
-    const months = await getFightersForYear(year); // Await here
-    for (const month of months) {
-      staticParams.push({ filter: [year.toString(), month.toString()] }); // Year and month
-    }
-  }
-
-  console.log("Generated static params:", staticParams); // Debugging output
-
-  return staticParams;
-}
-
 export default FilteredNewsPage;

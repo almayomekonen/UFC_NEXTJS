@@ -20,11 +20,4 @@ const ImagePage = async ({ params }) => {
   );
 };
 
-export async function generateStaticParams() {
-  const fighters = await getAllFighters();
-  return fighters.map((fighter) => ({
-    slug: fighter.slug,
-  }));
-}
-
 export default ImagePage;

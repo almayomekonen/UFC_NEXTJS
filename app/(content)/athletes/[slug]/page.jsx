@@ -117,11 +117,4 @@ const NewsDetailPage = async ({ params }) => {
   );
 };
 
-export async function generateStaticParams() {
-  const allFighters = await getAllFighters();
-  return allFighters.map((fighter) => ({
-    slug: fighter.slug,
-  }));
-}
-
 export default NewsDetailPage;

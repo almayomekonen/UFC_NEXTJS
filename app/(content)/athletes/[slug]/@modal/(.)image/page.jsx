@@ -37,12 +37,4 @@ const InterceptedImagePage = async ({ params, searchParams }) => {
   );
 };
 
-export async function generateStaticParams() {
-  const slugs = await getAllFighters();
-
-  return slugs.map((slug) => ({
-    slug,
-  }));
-}
-
 export default InterceptedImagePage;
