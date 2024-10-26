@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
 * {
   box-sizing: border-box;
@@ -35,7 +35,6 @@ ul {
   width: 90%;
   margin: 2rem auto;
 }
-
 
 #home {
   margin: 3rem auto;
@@ -120,10 +119,9 @@ ul {
   margin-top: 3rem;
 }
 
-
 @media (max-width: 768px) {
   #archive-filter {
-   width: 22rem;
+    width: 22rem;
   }
 
   h1 {
@@ -137,7 +135,7 @@ ul {
 
 @media (max-width: 480px) {
   #archive-filter {
-    padding-bottom: 0.5rem; 
-    border-bottom-width: 1px; /* Further adjust border thickness */
+    padding-bottom: 0.5rem;
+    border-bottom-width: 1px;
   }
 }

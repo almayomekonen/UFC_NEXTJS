@@ -1,4 +1,4 @@
-import logo from "../ufc.png";
+import logo from "../icon.png";
 import Link from "next/link";
 
 export default function HomePage() {

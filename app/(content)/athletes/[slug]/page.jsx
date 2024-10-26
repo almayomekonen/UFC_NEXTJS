@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAllFighters, getFighterBySlug } from "@/lib/fightersService";
+import { getFighterBySlug } from "@/lib/fightersService";
 
 import classes from "./page.module.css";
 
