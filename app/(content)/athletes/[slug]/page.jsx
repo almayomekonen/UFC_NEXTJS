@@ -119,11 +119,8 @@ const NewsDetailPage = async ({ params }) => {
 
 export async function generateStaticParams() {
   const allFighters = await getAllFighters();
-
   return allFighters.map((fighter) => ({
-    params: {
-      slug: fighter.slug,
-    },
+    slug: fighter.slug,
   }));
 }
 
