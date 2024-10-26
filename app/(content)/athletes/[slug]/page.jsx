@@ -28,6 +28,7 @@ const NewsDetailPage = async ({ params }) => {
             <p>{newsItem.fightDate}</p>
             <Link href={`/athletes/${newsItem.slug}/image?fighter=action`}>
               <img
+                className={classes.gifImg}
                 src={`${process.env.BUCKET_GIFS_FIGHTERS_URL}/${newsItem.images.action}`}
                 alt={newsItem.title}
               />
@@ -35,7 +36,9 @@ const NewsDetailPage = async ({ params }) => {
             <p>{newsItem.knockoutDetail}</p>
             <p>{newsItem.location}</p>
             <h4>{newsItem.highlight}</h4>
-            <button>VIEW FIGHT HISTORY</button>
+            <a href="#athletes-history">
+              <button>VIEW FIGHT HISTORY</button>
+            </a>
           </div>
         </header>
 
@@ -63,7 +66,7 @@ const NewsDetailPage = async ({ params }) => {
         </div>
       </article>
 
-      <section className={classes.fightHistory}>
+      <section id="athletes-history" className={classes.fightHistory}>
         <h2 className={classes.h2}>ATHLETE RECORD</h2>
         {newsItem.fightesDetails.fightHistory &&
           newsItem.fightesDetails.fightHistory.map((fight, index) => (

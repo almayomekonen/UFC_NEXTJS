@@ -6,6 +6,7 @@
 
 html {
   font-family: "Merriweather", serif;
+  scroll-behavior: smooth;
 }
 
 body {

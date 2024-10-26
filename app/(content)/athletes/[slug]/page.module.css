@@ -172,7 +172,6 @@
   .actionImage {
     flex-direction: column;
     justify-content: end;
-    padding: 3rem;
   }
   .newsArticle .detailsAndResume {
     display: flex;
@@ -182,11 +181,11 @@
 
 /* FIGHTES DETAILS */
 
-.h2{
+.h2 {
   color: #19191e;
   font-weight: 200;
   font-size: 2rem;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   padding: 1.5rem;
 }
 .athleteResultsInfo {
@@ -269,10 +268,9 @@
 }
 
 /* MEDIA QUERY */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .athleteResultsImage {
     width: 100px;
     margin-right: 20px;
   }
-  
 }
