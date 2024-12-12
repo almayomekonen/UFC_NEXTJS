@@ -3,6 +3,7 @@
   justify-content: center;
   gap: 7rem;
   grid-template-columns: repeat(3, 280px);
+  z-index: 1000;
 }
 
 .athletesList a {

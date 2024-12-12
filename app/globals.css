@@ -7,9 +7,11 @@
 html {
   font-family: "Merriweather", serif;
   scroll-behavior: smooth;
+  margin-top: 6rem;
 }
 
 body {
+  margin-top: 20rem;
   margin: 0;
   padding: 0;
   background-color: white;
