@@ -1,5 +1,5 @@
 import ModalBackDrop from "@/components/ModalBackDrop/ModalBackDrop";
-import { getFighterBySlug, getAllFighters } from "@/lib/fightersService";
+import { getFighterBySlug } from "@/lib/fightersService";
 import { notFound } from "next/navigation";
 
 const InterceptedImagePage = async ({ params, searchParams }) => {
@@ -27,12 +27,7 @@ const InterceptedImagePage = async ({ params, searchParams }) => {
 
   return (
     <>
-      <ModalBackDrop />
-      <dialog className="modal" open>
-        <div className="x-elem">
-          <img src={imageUrl} alt={newsItem.title} />
-        </div>
-      </dialog>
+      <ModalBackDrop imageUrl={imageUrl} title={newsItem.title} />
     </>
   );
 };
